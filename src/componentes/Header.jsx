@@ -1,4 +1,4 @@
-import './styles/header.css';
+import '../styles/header.css';
 
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import { InfoIcon } from '@chakra-ui/icons'
@@ -13,15 +13,23 @@ function Header() {
             <div className="category">
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href='#'>Home</BreadcrumbLink>
+                        <BreadcrumbLink href='/'>Home</BreadcrumbLink>
                     </BreadcrumbItem>
 
                     <BreadcrumbItem>
-                        <BreadcrumbLink href='#'>Products</BreadcrumbLink>
+                        <BreadcrumbLink href='login'>login</BreadcrumbLink>
                     </BreadcrumbItem>
 
-                    <BreadcrumbItem isCurrentPage>
-                        <BreadcrumbLink href='#'>User</BreadcrumbLink>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href='signup'>sign up</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href='products'>Products</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem >
+                        <BreadcrumbLink href='user'>User</BreadcrumbLink>
                     </BreadcrumbItem>
                 </Breadcrumb>
             </div>

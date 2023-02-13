@@ -3,6 +3,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 15px 0px;
+    flex-direction: row;    
 }
 
 .logo img {
@@ -14,4 +15,10 @@
     justify-content: space-around;
     align-items: center;
     gap: 14px;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        flex-basis: auto;
+        margin-bottom: 0;
+    }
 }
