@@ -17,14 +17,6 @@ function Header() {
                     </BreadcrumbItem>
 
                     <BreadcrumbItem>
-                        <BreadcrumbLink href='login'>login</BreadcrumbLink>
-                    </BreadcrumbItem>
-
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='signup'>sign up</BreadcrumbLink>
-                    </BreadcrumbItem>
-
-                    <BreadcrumbItem>
                         <BreadcrumbLink href='products'>Products</BreadcrumbLink>
                     </BreadcrumbItem>
 
@@ -35,7 +27,14 @@ function Header() {
             </div>
 
             <div className='user'>
-                <InfoIcon />
+                <Breadcrumb>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href='/login'>log in</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink href='signup'>sign up</BreadcrumbLink>
+                    </BreadcrumbItem>
+                </Breadcrumb>
                 <p>cart</p>
             </div>
 

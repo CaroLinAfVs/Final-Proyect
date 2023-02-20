@@ -2,7 +2,7 @@ import "../styles/products.css"
 import { Card, CardBody, CardFooter, CardHeader, Heading, Text, Button, SimpleGrid } from '@chakra-ui/react'
 function Products() {
     return (<div className="products">
-        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))' width={"100%"}>
+        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
     <Card>
       <CardHeader>
         <Heading size='md'> Customer dashboard</Heading>
