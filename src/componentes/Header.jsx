@@ -1,7 +1,9 @@
 import '../styles/header.css';
 
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
-import { InfoIcon } from '@chakra-ui/icons'
+import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 function Header() {
     return (
@@ -35,7 +37,9 @@ function Header() {
                         <BreadcrumbLink href='signup'>sign up</BreadcrumbLink>
                     </BreadcrumbItem>
                 </Breadcrumb>
-                <p>cart</p>
+                <Link to="/cart">
+                <FaShoppingCart/>
+                </Link>
             </div>
 
         </div>

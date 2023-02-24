@@ -46,3 +46,8 @@
 .products{
     margin-top: 10px;
 }
+.cardFooter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
