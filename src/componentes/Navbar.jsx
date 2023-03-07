@@ -5,7 +5,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 
-function Header() {
+function Navbar() {
     return (
         <div className='container'>
             <div className="logo">
@@ -38,7 +38,7 @@ function Header() {
                         <BreadcrumbLink href='/login'>log in</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href='signup'>sign up</BreadcrumbLink>
+                        <BreadcrumbLink href='/signup'>sign up</BreadcrumbLink>
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <Link to="/cart">
@@ -49,4 +49,4 @@ function Header() {
         </div>
     )
 }
-export default Header
+export default Navbar
