@@ -25,6 +25,10 @@ function Header() {
                     <BreadcrumbItem >
                         <BreadcrumbLink href='user'>User</BreadcrumbLink>
                     </BreadcrumbItem>
+
+                    <BreadcrumbItem >
+                        <BreadcrumbLink href='galeria'>galeria</BreadcrumbLink>
+                    </BreadcrumbItem>
                 </Breadcrumb>
             </div>
 

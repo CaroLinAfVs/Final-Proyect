@@ -1,0 +1,16 @@
+{
+    "method": "POST",
+    "path": "/login",
+    "body": {
+        "email": "",
+        "password": ""
+    },
+    "data": {
+        "token": "",
+        "user": {
+            "id": "",
+            "email": "",
+            "name": ""
+        }
+    }
+}
