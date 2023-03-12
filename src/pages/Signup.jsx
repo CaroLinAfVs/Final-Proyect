@@ -2,7 +2,7 @@ import "../styles/signup.css"
 import { Input, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 function Signup() {
 
@@ -27,15 +27,15 @@ function Signup() {
     function handlePasswordStrengthChange(event) {
         const password = event.target.value;
         setPassword(password);
-    
+
         if (password.length <= 5) {
-          setPasswordStrength("weak");
+            setPasswordStrength("weak");
         } else if (password.length <= 8) {
-          setPasswordStrength("medium");
+            setPasswordStrength("medium");
         } else {
-          setPasswordStrength("strong");
+            setPasswordStrength("strong");
         }
-      }
+    }
 
     return (
         <div className="signup">
@@ -54,16 +54,22 @@ function Signup() {
                         width: "300px",
                         marginTop: "8px",
                         borderRadius: "5px",
-                        backgroundColor: passwordStrength === "weak" ? "red" : passwordStrength === "medium" ? "yellow" : "green"                    }}></div>
+                        backgroundColor: passwordStrength === "weak" ? "red" : passwordStrength === "medium" ? "yellow" : "green"
+                    }}></div>
                     {passwordStrength === "weak" ? <span style={{ color: "red" }}>Weak</span> : null}
                     {passwordStrength === "medium" ? <span style={{ color: "yellow" }}>Medium</span> : null}
                     {passwordStrength === "strong" ? <span style={{ color: "green" }}>Strong</span> : null}
                     <br />
                 </div>
+                    <Button onClick={handleSubmbit} rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                        Register
+                    </Button>
                 <h5>Si ya tienes cuenta presiona aqui </h5>
-                <Button onClick={handleSubmbit} rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
-                    Log in
-                </Button>
+                <Link to="/login">
+                    <Button  rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                        Log in
+                    </Button>
+                </Link>
             </div>
         </div >
     )

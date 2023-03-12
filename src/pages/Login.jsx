@@ -2,6 +2,7 @@ import "../styles/login.css"
 import { Input, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 
 
 function Login() {
@@ -11,15 +12,15 @@ function Login() {
 
     function handleSubmbit() {
         let passwordValue = password || "";
- 
+
         if (!email) {
             alert("Por favor, proporcione un correo electrónico válido.");
-          } else if (passwordValue.length < 10) {
+        } else if (passwordValue.length < 10) {
             alert("La contraseña debe tener al menos 10 caracteres.");
-          } else {
+        } else {
             alert("¡Login exitoso!");
-          }
         }
+    }
     return (
 
         <div className="space">
@@ -40,9 +41,11 @@ function Login() {
                     Log in
                 </Button>
                 <h5>Si no tienes cuenta registrate aqui </h5>
-                <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
-                    Register
-                </Button>
+                <Link to="/signup">
+                    <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                        Register
+                    </Button>
+                </Link>
             </div>
         </div>
     )
