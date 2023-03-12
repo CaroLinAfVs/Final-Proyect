@@ -1,0 +1,20 @@
+.cart {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 79%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid rgba(109, 107, 107, 0.35);
+    border-radius: 4px;
+    box-shadow: rgba(99, 98, 98, 0.35) 0px 5px 15px;
+}
+.cardFooter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

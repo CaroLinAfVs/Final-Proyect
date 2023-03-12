@@ -1,0 +1,31 @@
+.space{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerLogin{
+    width: 500px;
+    height: 565px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+}
+.containerLogin h1{
+    margin: 15px 0px;
+}
+.containerLogin h5{
+    margin-top: 20px;
+    font-size: 15px;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+}
+.data h4{
+margin: 20px ;
+}
