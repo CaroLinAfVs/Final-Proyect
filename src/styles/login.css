@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(111deg, #49C5F6, #FF2AEF);
 }
 .containerLogin{
     width: 500px;
@@ -10,6 +11,8 @@
     border: 1px solid black;
     text-align: center;
     font-size: 30px;
+    background-color: aliceblue;
+    border-radius: 5px;
 }
 .containerLogin h1{
     margin: 15px 0px;
@@ -28,4 +31,7 @@
 }
 .data h4{
 margin: 20px ;
+}
+.data p{
+    font-size: 10px;
 }

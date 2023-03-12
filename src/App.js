@@ -1,31 +1,31 @@
 import './App.css';
-import Header from './componentes/Header';
-import Home from './componentes/Home';
-import Footer from './componentes/footer';
-import Login from './componentes/Login';
-import Cart from './componentes/Cart';
-import User from './componentes/User';
+import Navbar from './componentes/Navbar';
+import Home from './pages/Home';
+import Footer from './componentes/Footer';
+import Login from './pages/Login';
+import Cart from './pages/Cart';
+import User from './pages/User';
+import Layout from './componentes/Layout'
+import Galeria from './componentes/Galeria';
 
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Signup from './componentes/Signup';
-import Products from './componentes/Products';
+import Signup from './pages/Signup';
+import Products from './pages/Products';
 
 function App() {
   return (
     <ChakraProvider>
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/products" element={<Products />} />
-          <Route path='cart' element={<Cart/>}/>
-          <Route path="/user" element={<User />} />
+          <Route path="/" element={<Layout><Home/></Layout>} />
+          <Route path="/products" element={<Layout><Products/></Layout>} />
+          <Route path='/cart' element={<Layout><Cart/></Layout>} />
+          <Route path="/user" element={<Layout><User/></Layout>} />
+          <Route path="/Galeria" element={<Galeria/>}/>
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Signup/>} />
         </Routes>
-
-        <Footer />
       </BrowserRouter>
     </ChakraProvider>
   );
