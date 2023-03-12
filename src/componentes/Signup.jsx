@@ -2,6 +2,7 @@ import "../styles/signup.css"
 import { Input, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 
+
 function Signup() {
     return (
         <div className="signup">

@@ -1,9 +1,14 @@
 import "../styles/login.css"
 import { Input, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import {useData} from "../Context/Context"
 
 
 function Login() {
+    const {user, setUser} = useData()
+    function login() {
+        setUser("hola@gmail.com");
+    }
     return (
         <div className="space">
             <div className="containerLogin">
@@ -15,7 +20,7 @@ function Login() {
                     <Input width="300px" size='md'></Input>
                 </div>
                 <h5>Si no tienes cuenta registrate aqui </h5>
-                <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline' onClick={login}>
                     Register
                 </Button>
             </div>

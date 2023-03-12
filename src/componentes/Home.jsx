@@ -5,9 +5,13 @@ import {
     Text, CardFooter, Button, SimpleGrid
 } from '@chakra-ui/react'
 import { BsCartPlus } from 'react-icons/bs';
+import { useData } from "../Context/Context";
+
 
 
 function Home() {
+    const {user} = useData()
+
     return (
         <div className="home">
 
@@ -30,7 +34,7 @@ function Home() {
                 </Box>
             </div>
             <div className="title">
-                <h1>The most seeling products</h1>
+                <h1>The most seeling products: {user}</h1>
             </div>
             <div className="products">
                 <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
