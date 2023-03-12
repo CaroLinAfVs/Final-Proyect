@@ -7,7 +7,7 @@ import {useData} from "../Context/Context"
 function Login() {
     const {user, setUser} = useData()
     function login() {
-        setUser("hola@gmail.com");
+        setUser("user@user.com");
     }
     return (
         <div className="space">

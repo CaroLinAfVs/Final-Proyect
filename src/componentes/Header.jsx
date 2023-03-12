@@ -15,15 +15,18 @@ function Header() {
             <div className="category">
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+                        <Link to='/'>
+                            <BreadcrumbLink >Home</BreadcrumbLink>
+                        </Link>
                     </BreadcrumbItem>
-
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='products'>Products</BreadcrumbLink>
-                    </BreadcrumbItem>
+                    <Link to='products'>
+                        <BreadcrumbLink >Products</BreadcrumbLink>
+                    </Link>
 
                     <BreadcrumbItem >
-                        <BreadcrumbLink href='user'>User</BreadcrumbLink>
+                        <Link to='user'>
+                        <BreadcrumbLink >User</BreadcrumbLink>
+                        </Link>
                     </BreadcrumbItem>
                 </Breadcrumb>
             </div>
@@ -38,7 +41,7 @@ function Header() {
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <Link to="/cart">
-                <FaShoppingCart/>
+                    <FaShoppingCart />
                 </Link>
             </div>
 
