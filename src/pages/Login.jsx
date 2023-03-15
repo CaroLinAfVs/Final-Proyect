@@ -2,13 +2,18 @@ import "../styles/login.css"
 import { Input, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import userFake from "../mocks/user.json";
+
 
 
 function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
+
 
     function handleSubmbit() {
         let passwordValue = password || "";
@@ -18,8 +23,12 @@ function Login() {
         } else if (passwordValue.length < 10) {
             alert("La contraseña debe tener al menos 10 caracteres.");
         } else {
-            alert("¡Login exitoso!");
-        }
+            localStorage.setItem("token", userFake.token);
+            localStorage.setItem("email", email);
+            localStorage.setItem("username", userFake.username);
+      
+            return navigate("/");
+          }
     }
     return (
 
@@ -32,7 +41,6 @@ function Login() {
                         size='md' onChange={(event) => setEmail(event.target.value)}>
                     </Input>
                     <h4>Password:</h4>
-                    <p>(10 caracteres minimo)</p>
                     <Input type="password" width="300px" size='md'
                         onChange={(event) => setPassword(event.target.value)}>
                     </Input>
