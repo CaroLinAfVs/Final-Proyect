@@ -5,16 +5,11 @@ import {
     Text, CardFooter, Button, SimpleGrid
 } from '@chakra-ui/react'
 import { BsCartPlus } from 'react-icons/bs';
-import { useData } from "../Context/Context";
-
-
 
 function Home() {
-    const {user} = useData()
 
     return (
         <div className="home">
-
             <div className="exampleProducts">
                 <Box className="imageView">
                     <img src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/coca-cola-london-eye/the-london-eye-2-640x360.jpg?mw=640&hash=F7D574072DAD523443450DF57E3B91530064E4EE" alt="" />
@@ -34,7 +29,7 @@ function Home() {
                 </Box>
             </div>
             <div className="title">
-                <h1>The most seeling products: {user}</h1>
+                <h1>The most seeling products</h1>
             </div>
             <div className="products">
                 <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
