@@ -37,8 +37,8 @@ function App() {
               <Route path="/my-posts" element={<PrivateRoute><Myposts /></PrivateRoute>} />
 
             </Route>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />}/>
+            <Route path="/signup" element={<Signup />}/>
           </Routes>
         </BrowserRouter>
       </Context.Provider>
