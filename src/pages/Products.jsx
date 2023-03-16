@@ -23,7 +23,7 @@ function Products() {
           <Text>View a summary of all your customers over the last month.</Text>
         </CardBody>
         <CardFooter display="flex" justifyContent="space-around" alignItems="center">
-          <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+          <Link to="/product-view"><Button marginRight=" 10px">see more</Button></Link>
           <Button marginRight=" 10px"><BsCartPlus /></Button>
         </CardFooter>
       </Card>
@@ -40,7 +40,7 @@ function Products() {
           <Text>View a summary of all your customers over the last month.</Text>
         </CardBody>
         <CardFooter display="flex" justifyContent="space-around" alignItems="center">
-          <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+          <Link to="/product-view"><Button marginRight=" 10px">see more</Button></Link>
           <Button marginRight=" 10px"><BsCartPlus /></Button>
         </CardFooter>
       </Card>
@@ -57,7 +57,7 @@ function Products() {
           <Text>View a summary of all your customers over the last month.</Text>
         </CardBody>
         <CardFooter display="flex" justifyContent="space-around" alignItems="center">
-          <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+          <Link to="/product-view"><Button marginRight=" 10px">see more</Button></Link>
           <Button marginRight=" 10px"><BsCartPlus /></Button>
         </CardFooter>
       </Card>

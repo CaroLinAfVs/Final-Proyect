@@ -3,8 +3,10 @@ import {
     CardHeader, CardBody, CardFooter, Text
 } from '@chakra-ui/react'
 
+import "../styles/menu.css"
+
 function Favorites() {
-    return (<div>
+    return (<div className='favoritos'>
         <div className="box">
             <div className="contenido">
                 <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>

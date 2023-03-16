@@ -4,11 +4,9 @@ import { Outlet } from "react-router-dom";
 
 function Layout() {
     return (
-        <div>
+        <div className="contenedor">
             <Navbar />
-            <div className="full-height">
                 <Outlet />
-            </div>
             <Footer />
         </div>
     )

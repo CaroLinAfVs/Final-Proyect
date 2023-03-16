@@ -24,7 +24,7 @@ function Navbar() {
     return (
         <div className='container'>
             <div className="logo">
-                <img src="https://www.logocrea.com/storage/2016/07/gato1.png" alt="" />
+                <img src="https://img.freepik.com/iconos-gratis/gato-negro_318-837948.jpg" alt="" />
             </div>
 
             <div className="category">

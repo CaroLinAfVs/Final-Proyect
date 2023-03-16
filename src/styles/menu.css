@@ -1,10 +1,17 @@
-.cart {
+.favoritos {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
-
+.myposts {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
 .box{
     width: 79%;
     height: 100%;
@@ -12,16 +19,4 @@
     border: 1px solid rgba(109, 107, 107, 0.35);
     border-radius: 4px;
     box-shadow: rgba(99, 98, 98, 0.35) 0px 5px 15px;
-}
-.cardFooter{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.favoritos {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

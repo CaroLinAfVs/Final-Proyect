@@ -13,9 +13,9 @@ import CreateProduct from "./pages/CreateProduct"
 import { Context } from './Context/Context';
 import { useState } from 'react';
 import PrivateRoute from './utils/PrivateRoute';
-import Myinformation from './pages/Myinformation';
+import Myinformation from './pages/MyInformation';
 import Favorites from './pages/Favorites';
-import Myposts from './pages/Myposts';
+import Myposts from './pages/MyPosts';
 
 function App() {
   const [user, setUser] = useState()
@@ -30,8 +30,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path='/cart' element={<Cart />} />
+              <Route path="/product-view" element={<ProductView />} />
               <Route path="/create-product" element={<PrivateRoute><CreateProduct /></PrivateRoute>} />
-              <Route path="/product-view" element={<PrivateRoute><ProductView /></PrivateRoute>} />
               <Route path="/my-information" element={<PrivateRoute><Myinformation /></PrivateRoute>} />
               <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
               <Route path="/my-posts" element={<PrivateRoute><Myposts /></PrivateRoute>} />

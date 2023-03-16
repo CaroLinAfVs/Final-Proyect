@@ -48,17 +48,20 @@ function Login() {
                 <Button onClick={handleSubmbit} rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
                     Log in
                 </Button>
-                <h5>Si no tienes cuenta registrate aqui </h5>
-                <Link to="/signup">
-                    <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
-                        Register
-                    </Button>
-                </Link>
+                <div className="footerButton">
+                    <h5>Si no tienes cuenta registrate aqui </h5>
+                    <Link to="/signup">
+                        <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                            Register
+                        </Button>
+                    </Link>
+                </div>
                 <Link to="/" >
                     <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
                         Go back
                     </Button>
                 </Link>
+
             </div>
         </div>
     )
