@@ -2,8 +2,8 @@ import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
-import User from './pages/User';
 import Layout from './componentes/Layout'
+import ProductView from './pages/ProductView';
 
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
@@ -13,6 +13,9 @@ import CreateProduct from "./pages/CreateProduct"
 import { Context } from './Context/Context';
 import { useState } from 'react';
 import PrivateRoute from './utils/PrivateRoute';
+import Myinformation from './pages/Myinformation';
+import Favorites from './pages/Favorites';
+import Myposts from './pages/Myposts';
 
 function App() {
   const [user, setUser] = useState()
@@ -27,8 +30,12 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path='/cart' element={<Cart />} />
-              <Route path="/user" element={<PrivateRoute><User /></PrivateRoute>} />
-              <Route path="/user/create-product" element={<PrivateRoute><CreateProduct /></PrivateRoute>} />
+              <Route path="/create-product" element={<PrivateRoute><CreateProduct /></PrivateRoute>} />
+              <Route path="/product-view" element={<PrivateRoute><ProductView /></PrivateRoute>} />
+              <Route path="/my-information" element={<PrivateRoute><Myinformation /></PrivateRoute>} />
+              <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
+              <Route path="/my-posts" element={<PrivateRoute><Myposts /></PrivateRoute>} />
+
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />

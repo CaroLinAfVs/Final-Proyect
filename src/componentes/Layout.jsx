@@ -15,11 +15,3 @@ function Layout() {
 }
 export default Layout
 
-/**
- * 
- * <Layout>
- *      <Home />
- * <Layout />
- * 
- * 
- */

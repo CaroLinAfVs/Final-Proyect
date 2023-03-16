@@ -1,53 +1,74 @@
-.home{
+.home {
     height: 100%;
 }
-.exampleProducts{
+
+.exampleProducts {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    background: linear-gradient(45deg, red,blue) ;
+    background: linear-gradient(45deg, red, blue);
 }
-.imageView{
+
+.imageView {
     width: 100%;
 }
-.text{
+
+.text {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     align-items: center;
     align-content: center;
     flex-direction: column;
     color: white;
     text-align: center;
 }
-.styleText{
+
+.styleText {
     margin-top: 40px;
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.image{
+
+.image {
     width: 50%;
 }
-.title{
+
+.title {
     margin-top: 10px;
     display: flex;
     justify-content: center;
     font-size: 30px;
 }
-.title h1{
-    background: linear-gradient(45deg, yellow,aqua) ;
+
+.title h1 {
+    background: linear-gradient(45deg, yellow, aqua);
     padding: 3px;
-    border-radius: 10px ;
+    border-radius: 10px;
 
 }
-.products{
+
+.products {
     margin-top: 10px;
 }
-.cardFooter{
+
+.cardFooter {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
 }
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+

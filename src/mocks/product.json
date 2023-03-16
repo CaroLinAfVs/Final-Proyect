@@ -1,0 +1,79 @@
+{
+"id": 1,
+"name": "Camiseta de algodón",
+"description": "Camiseta de manga corta, 100% algodón",
+"price": 15.99,
+"url": "https://ejemplo.com/producto-1"
+}
+
+{
+"id": 2,
+"name": "Zapatillas deportivas",
+"description": "Zapatillas para correr con suela antideslizante",
+"price": 79.99,
+"url": "https://ejemplo.com/producto-2"
+}
+
+{
+"id": 3,
+"name": "Pantalón de mezclilla",
+"description": "Pantalón de mezclilla con corte recto",
+"price": 45.99,
+"url": "https://ejemplo.com/producto-3"
+}
+
+{
+"id": 4,
+"name": "Portátil Lenovo",
+"description": "Portátil Lenovo con procesador Intel Core i5 y 8 GB de RAM",
+"price": 799.99,
+"url": "https://ejemplo.com/producto-4"
+}
+
+{
+"id": 5,
+"name": "Lámpara de escritorio",
+"description": "Lámpara de escritorio con luz LED regulable",
+"price": 29.99,
+"url": "https://ejemplo.com/producto-5"
+}
+
+{
+"id": 6,
+"name": "Reproductor de música",
+"description": "Reproductor de música portátil con capacidad para 16 GB",
+"price": 69.99,
+"url": "https://ejemplo.com/producto-6"
+}
+
+{
+"id": 7,
+"name": "Mochila para laptop",
+"description": "Mochila para laptop con múltiples compartimentos",
+"price": 39.99,
+"url": "https://ejemplo.com/producto-7"
+}
+
+{
+"id": 8,
+"name": "Audífonos con cancelación de ruido",
+"description": "Audífonos con tecnología de cancelación de ruido activa",
+"price": 149.99,
+"url": "https://ejemplo.com/producto-8"
+}
+
+{
+"id": 9,
+"name": "Tableta digitalizadora",
+"description": "Tableta digitalizadora para dibujar y tomar notas",
+"price": 89.99,
+"url": "https://ejemplo.com/producto-9"
+}
+
+{
+"id": 10,
+"name": "Smartphone Samsung",
+"description": "Smartphone Samsung con pantalla AMOLED de 6.5 pulgadas",
+"price": 599.99,
+"url": "https://ejemplo.com/producto-10"
+}

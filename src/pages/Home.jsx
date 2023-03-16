@@ -5,6 +5,7 @@ import {
     Text, CardFooter, Button, SimpleGrid
 } from '@chakra-ui/react'
 import { BsCartPlus } from 'react-icons/bs';
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -47,7 +48,10 @@ function Home() {
                         </CardBody>
                         <CardFooter className="cardFooter">
                             <Text>$30000</Text>
-                            <Button><BsCartPlus /></Button>
+                            <div className="botones">
+                                <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+                                <Button marginRight=" 10px"><BsCartPlus /></Button>
+                            </div>
                         </CardFooter>
                     </Card>
                     <Card>
@@ -64,8 +68,10 @@ function Home() {
                         </CardBody>
                         <CardFooter className="cardFooter">
                             <Text>$30000</Text>
-                            <Button><BsCartPlus /></Button>
-                        </CardFooter>
+                            <div className="botones">
+                                <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+                                <Button marginRight=" 10px"><BsCartPlus /></Button>
+                            </div>                        </CardFooter>
                     </Card>
                     <Card>
                         <CardHeader>
@@ -81,8 +87,10 @@ function Home() {
                         </CardBody>
                         <CardFooter className="cardFooter">
                             <Text>$30000</Text>
-                            <Button><BsCartPlus /></Button>
-                        </CardFooter>
+                            <div className="botones">
+                                <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+                                <Button marginRight=" 10px"><BsCartPlus /></Button>
+                            </div>                        </CardFooter>
                     </Card>
                     <Card>
                         <CardHeader>
@@ -98,8 +106,10 @@ function Home() {
                         </CardBody>
                         <CardFooter className="cardFooter">
                             <Text>$30000</Text>
-                            <Button><BsCartPlus /></Button>
-                        </CardFooter>
+                            <div className="botones">
+                                <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+                                <Button marginRight=" 10px"><BsCartPlus /></Button>
+                            </div>                        </CardFooter>
                     </Card>
                     <Card>
                         <CardHeader>
@@ -115,8 +125,10 @@ function Home() {
                         </CardBody>
                         <CardFooter className="cardFooter">
                             <Text>$30000</Text>
-                            <Button><BsCartPlus /></Button>
-                        </CardFooter>
+                            <div className="botones">
+                                <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+                                <Button marginRight=" 10px"><BsCartPlus /></Button>
+                            </div>                        </CardFooter>
                     </Card>
                     <Card>
                         <CardHeader>
@@ -132,8 +144,10 @@ function Home() {
                         </CardBody>
                         <CardFooter className="cardFooter">
                             <Text>$30000</Text>
-                            <Button><BsCartPlus /></Button>
-                        </CardFooter>
+                            <div className="botones">
+                                <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+                                <Button marginRight=" 10px"><BsCartPlus /></Button>
+                            </div>                        </CardFooter>
                     </Card>
                     <Card>
                         <CardHeader>
@@ -149,8 +163,10 @@ function Home() {
                         </CardBody>
                         <CardFooter className="cardFooter">
                             <Text>$30000</Text>
-                            <Button><BsCartPlus /></Button>
-                        </CardFooter>
+                            <div className="botones">
+                                <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+                                <Button marginRight=" 10px"><BsCartPlus /></Button>
+                            </div>                        </CardFooter>
                     </Card>
                 </SimpleGrid>
             </div>
