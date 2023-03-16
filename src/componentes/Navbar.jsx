@@ -1,13 +1,12 @@
-import '../styles/header.css';
+import '../styles/navbar.css';
 
 import {
-    Breadcrumb, BreadcrumbItem, BreadcrumbLink,
     Menu, MenuList, MenuButton, MenuGroup,
-    MenuItem, Button
+    MenuItem, Button, 
 } from '@chakra-ui/react';
 
 import { FaShoppingCart } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -29,47 +28,24 @@ function Navbar() {
             </div>
 
             <div className="category">
-                <Breadcrumb>
-                    <BreadcrumbItem>
                         <Link to="/">
-                            <BreadcrumbLink>Home</BreadcrumbLink>
+                            <Button>Home</Button>
                         </Link>
-                    </BreadcrumbItem>
 
-                    <BreadcrumbItem>
                         <Link to="/products">
-                            <BreadcrumbLink>Products</BreadcrumbLink>
+                            <Button>Products</Button>
                         </Link>
-                    </BreadcrumbItem>
-
-                    <BreadcrumbItem>
-                        <Link to="/user">
-                            <BreadcrumbLink>User</BreadcrumbLink>
-                        </Link>
-                    </BreadcrumbItem>
-
-                    <BreadcrumbItem>
-                        <Link to="/galeria">
-                            <BreadcrumbLink>galeria</BreadcrumbLink>
-                        </Link>
-                    </BreadcrumbItem>
-                </Breadcrumb>
             </div>
 
             <div className='user'>
-                {!username ? (
-                    <Breadcrumb>
-                        <BreadcrumbItem>
+                {!username ? (<div>
                             <Link to="/login">
-                                <BreadcrumbLink>log in</BreadcrumbLink>
+                                <Button marginRight="5px" colorScheme='blue'>log in</Button>
                             </Link>
-                        </BreadcrumbItem>
-                        <BreadcrumbItem>
                             <Link to="/signup">
-                                <BreadcrumbLink>sign up</BreadcrumbLink>
+                            <Button colorScheme='blue'>sign up</Button>
                             </Link>
-                        </BreadcrumbItem>
-                    </Breadcrumb>
+                            </div>
                 ) : (
                     <div>
                         <Menu>
@@ -78,10 +54,10 @@ function Navbar() {
                             </MenuButton>
                             <MenuList>
                                 <MenuGroup title='Profile'>
-                                    <MenuItem>My Account</MenuItem>
-                                    <MenuItem>Favorite</MenuItem>
-                                    <MenuItem>My posts</MenuItem>
-                                    <MenuItem>New posts</MenuItem>
+                                    <Link to='/myinformation'><MenuItem>My Account</MenuItem></Link>
+                                    <Link to="/favorites"><MenuItem>Favorite</MenuItem></Link>
+                                    <Link to="myposts"><MenuItem>My posts</MenuItem></Link>
+                                    <Link to="newposts"><MenuItem>New posts</MenuItem></Link>
                                     <MenuItem onClick={logOut}>Log out</MenuItem>
                                 </MenuGroup>
                             </MenuList>

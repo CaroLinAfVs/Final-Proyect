@@ -16,6 +16,9 @@
     align-items: center;
     gap: 14px;
 }
+.category button{
+    margin-right: 10px;
+}
 @media screen and (max-width: 600px) {
     .container {
         flex-basis: auto;
