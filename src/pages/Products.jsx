@@ -2,7 +2,8 @@ import "../styles/products.css"
 import {
   Card, CardBody, CardFooter, CardHeader,
   Heading, Text, Button, SimpleGrid, Image
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
+import { Link } from "react-router-dom";
 import { BsCartPlus } from 'react-icons/bs';
 
 
@@ -21,10 +22,9 @@ function Products() {
         <CardBody>
           <Text>View a summary of all your customers over the last month.</Text>
         </CardBody>
-        <CardFooter className="cardFooter">
-          <Button className="btn2">
-            <h4><BsCartPlus /></h4>
-          </Button>
+        <CardFooter display="flex" justifyContent="space-around" alignItems="center">
+          <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+          <Button marginRight=" 10px"><BsCartPlus /></Button>
         </CardFooter>
       </Card>
       <Card>
@@ -39,8 +39,9 @@ function Products() {
         <CardBody>
           <Text>View a summary of all your customers over the last month.</Text>
         </CardBody>
-        <CardFooter className="cardFooter">
-          <Button><BsCartPlus /></Button>
+        <CardFooter display="flex" justifyContent="space-around" alignItems="center">
+          <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+          <Button marginRight=" 10px"><BsCartPlus /></Button>
         </CardFooter>
       </Card>
       <Card>
@@ -55,8 +56,9 @@ function Products() {
         <CardBody>
           <Text>View a summary of all your customers over the last month.</Text>
         </CardBody>
-        <CardFooter className="cardFooter">
-          <Button><BsCartPlus /></Button>
+        <CardFooter display="flex" justifyContent="space-around" alignItems="center">
+          <Link to="/productview"><Button marginRight=" 10px">see more</Button></Link>
+          <Button marginRight=" 10px"><BsCartPlus /></Button>
         </CardFooter>
       </Card>
     </SimpleGrid>
