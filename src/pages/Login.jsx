@@ -26,9 +26,9 @@ function Login() {
             localStorage.setItem("token", userFake.token);
             localStorage.setItem("email", email);
             localStorage.setItem("username", userFake.username);
-      
+
             return navigate("/");
-          }
+        }
     }
     return (
 
@@ -52,6 +52,11 @@ function Login() {
                 <Link to="/signup">
                     <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
                         Register
+                    </Button>
+                </Link>
+                <Link to="/" >
+                    <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                        Go back
                     </Button>
                 </Link>
             </div>

@@ -70,6 +70,11 @@ function Signup() {
                         Log in
                     </Button>
                 </Link>
+                <Link to="/" >
+                    <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                        Go back
+                    </Button>
+                </Link>
             </div>
         </div >
     )
