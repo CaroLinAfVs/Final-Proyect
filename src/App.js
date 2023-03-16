@@ -5,12 +5,11 @@ import Cart from './pages/Cart';
 import Layout from './componentes/Layout'
 import ProductView from './pages/ProductView';
 
-
-
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Signup from './pages/Signup';
 import Products from './pages/Products';
+import CreateProduct from "./pages/CreateProduct"
 import { Context } from './Context/Context';
 import { useState } from 'react';
 import PrivateRoute from './utils/PrivateRoute';
@@ -31,10 +30,11 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path='/cart' element={<Cart />} />
-              <Route path="/productview" element={<PrivateRoute><ProductView /></PrivateRoute>} />
-              <Route path="/myinformation" element={<PrivateRoute><Myinformation /></PrivateRoute>} />
+              <Route path="/create-product" element={<PrivateRoute><CreateProduct /></PrivateRoute>} />
+              <Route path="/product-view" element={<PrivateRoute><ProductView /></PrivateRoute>} />
+              <Route path="/my-information" element={<PrivateRoute><Myinformation /></PrivateRoute>} />
               <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
-              <Route path="/myposts" element={<PrivateRoute><Myposts /></PrivateRoute>} />
+              <Route path="/my-posts" element={<PrivateRoute><Myposts /></PrivateRoute>} />
 
             </Route>
             <Route path="/login" element={<Login />} />

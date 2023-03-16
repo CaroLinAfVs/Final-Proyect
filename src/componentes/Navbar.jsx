@@ -54,10 +54,10 @@ function Navbar() {
                             </MenuButton>
                             <MenuList>
                                 <MenuGroup title='Profile'>
-                                    <Link to='/myinformation'><MenuItem>My Account</MenuItem></Link>
+                                    <Link to='/my-information'><MenuItem>My Account</MenuItem></Link>
                                     <Link to="/favorites"><MenuItem>Favorite</MenuItem></Link>
-                                    <Link to="myposts"><MenuItem>My posts</MenuItem></Link>
-                                    <Link to="newposts"><MenuItem>New posts</MenuItem></Link>
+                                    <Link to="/my-posts"><MenuItem>My posts</MenuItem></Link>
+                                    <Link to="/create-product"><MenuItem>Create product</MenuItem></Link>
                                     <MenuItem onClick={logOut}>Log out</MenuItem>
                                 </MenuGroup>
                             </MenuList>
