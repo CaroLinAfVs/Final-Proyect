@@ -3,6 +3,7 @@ import { Input, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Signup() {
 
@@ -11,17 +12,23 @@ function Signup() {
     const [name, setName] = useState("");
     const [passwordStrength, setPasswordStrength] = useState('');
 
-    function handleSubmbit() {
-        let passwordValue = password || "";
-        if (!email) {
-            alert("Por favor, proporcione un correo electrónico válido.");
-        } else if (passwordValue.length < 5) {
-            alert("La contraseña debe tener al menos 5 caracteres.");
-        } else if (name === "") {
-            alert("porfavor ingresa un nombre")
-        } else {
-            alert("Registro exitoso.");
+    async function handleSubmbit() {
+        try {
+            if (!email) {
+                alert("Por favor, proporcione un correo electrónico válido.");
+            } else if (password.length < 5) {
+                alert("La contraseña debe tener al menos 5 caracteres.");
+            } else if (name === "") {
+                alert("porfavor ingresa un nombre")
+            } else {
+                await axios.post("http://localhost:4000/signup", { email, password, name })
+            }
         }
+        catch (error) {
+            alert("Hubo un error con el registro de usuarios. Intentalo mas tarde.")
+        }
+
+
     }
 
     function handlePasswordStrengthChange(event) {
@@ -61,12 +68,12 @@ function Signup() {
                     {passwordStrength === "strong" ? <span style={{ color: "green" }}>Strong</span> : null}
                     <br />
                 </div>
-                    <Button onClick={handleSubmbit} rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
-                        Register
-                    </Button>
+                <Button onClick={handleSubmbit} rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                    Register
+                </Button>
                 <h5>Si ya tienes cuenta presiona aqui </h5>
                 <Link to="/login">
-                    <Button  rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+                    <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
                         Log in
                     </Button>
                 </Link>
