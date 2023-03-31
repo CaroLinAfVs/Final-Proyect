@@ -3,7 +3,7 @@ import { Input, Button } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import userFake from "../mocks/user.json";
+import axios from "axios";
 
 
 
@@ -15,19 +15,23 @@ function Login() {
     const navigate = useNavigate();
 
 
-    function handleSubmbit() {
-        let passwordValue = password || "";
+    async function handleSubmbit() {
+        try {
+            if (!email ) {
+                alert("Por favor, proporcione un correo electrónico válido.");
+            } else if (password.length < 10) {
+                alert("La contraseña debe tener al menos 10 caracteres.");
+            } else {
+                const {data} = await axios.post("http://localhost:4000/login",{email, password})
 
-        if (!email) {
-            alert("Por favor, proporcione un correo electrónico válido.");
-        } else if (passwordValue.length < 10) {
-            alert("La contraseña debe tener al menos 10 caracteres.");
-        } else {
-            localStorage.setItem("token", userFake.token);
-            localStorage.setItem("email", email);
-            localStorage.setItem("username", userFake.username);
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("email", data.usuario.email);
+                localStorage.setItem("username", data.usuario.nombre);
 
-            return navigate("/");
+                return navigate("/");
+            }
+        } catch(error){
+            alert ("Hubo un error con los datos entregados. Vuelve a intentarlo.")
         }
     }
     return (
@@ -37,7 +41,7 @@ function Login() {
                 <h1>Log in</h1>
                 <div className="data">
                     <h4>Email:</h4>
-                    <Input width="300px" placeholder="user@user.com"
+                    <Input type="email" width="300px" placeholder="user@user.com"
                         size='md' onChange={(event) => setEmail(event.target.value)}>
                     </Input>
                     <h4>Password:</h4>

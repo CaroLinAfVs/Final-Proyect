@@ -25,7 +25,7 @@ function Signup() {
             }
         }
         catch (error) {
-            alert("Hubo un error con el registro de usuarios. Intentalo mas tarde.")
+            alert("Hubo un error con el registro de usuarios. Intentarlo mas tarde.")
         }
 
 

@@ -5,62 +5,52 @@ import {
 } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
 import { BsCartPlus } from 'react-icons/bs';
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Products() {
+  const [productos, setProductos] = useState([]);
+  useEffect(() => {
+    const obtenerProductos = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:4000/producto');
+        setProductos(data);
+        console.log({data})
+      } catch (error) {
+        alert("Hubo un error al cargar los datos. Por favor intenta nuevamente.")
+      }
+    };
+    obtenerProductos();
+  }, []);
+
   return (<div className="products">
+
     <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
-      <Card>
+      {productos.map((producto) =>
+      (<Card>
         <CardHeader>
           <Heading size='md'>
             <Image
-              src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-              alt=""
+              src={producto.img}
+              alt={producto.nombre}
               borderRadius="lg"
             />
-          </Heading>      </CardHeader>
+          </Heading>
+        </CardHeader>
         <CardBody>
-          <Text>View a summary of all your customers over the last month.</Text>
+          <Text>
+            {producto.nombre}
+            {producto.descripcion}
+            {producto.price}
+          </Text>
         </CardBody>
         <CardFooter display="flex" justifyContent="space-around" alignItems="center">
           <Link to="/product-view"><Button marginRight=" 10px">see more</Button></Link>
           <Button marginRight=" 10px"><BsCartPlus /></Button>
         </CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
-          <Heading size='md'>
-            <Image
-              src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-              alt=""
-              borderRadius="lg"
-            />
-          </Heading>        </CardHeader>
-        <CardBody>
-          <Text>View a summary of all your customers over the last month.</Text>
-        </CardBody>
-        <CardFooter display="flex" justifyContent="space-around" alignItems="center">
-          <Link to="/product-view"><Button marginRight=" 10px">see more</Button></Link>
-          <Button marginRight=" 10px"><BsCartPlus /></Button>
-        </CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
-          <Heading size='md'>
-            <Image
-              src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-              alt=""
-              borderRadius="lg"
-            />
-          </Heading>        </CardHeader>
-        <CardBody>
-          <Text>View a summary of all your customers over the last month.</Text>
-        </CardBody>
-        <CardFooter display="flex" justifyContent="space-around" alignItems="center">
-          <Link to="/product-view"><Button marginRight=" 10px">see more</Button></Link>
-          <Button marginRight=" 10px"><BsCartPlus /></Button>
-        </CardFooter>
-      </Card>
+      </Card>)
+      )}
+
     </SimpleGrid>
   </div >
   )
