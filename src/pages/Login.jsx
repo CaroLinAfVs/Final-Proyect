@@ -19,8 +19,8 @@ function Login() {
         try {
             if (!email ) {
                 alert("Por favor, proporcione un correo electrónico válido.");
-            } else if (password.length < 10) {
-                alert("La contraseña debe tener al menos 10 caracteres.");
+            } else if (password.length < 5) {
+                alert("La contraseña debe tener al menos 5 caracteres.");
             } else {
                 const {data} = await axios.post("http://localhost:4000/login",{email, password})
 

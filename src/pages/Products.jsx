@@ -15,7 +15,6 @@ function Products() {
       try {
         const { data } = await axios.get('http://localhost:4000/producto');
         setProductos(data);
-        console.log({data})
       } catch (error) {
         alert("Hubo un error al cargar los datos. Por favor intenta nuevamente.")
       }

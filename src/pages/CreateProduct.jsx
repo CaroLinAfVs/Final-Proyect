@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { FormControl, FormLabel, Input, Container, Button, VStack } from "@chakra-ui/react";
+import axios from "axios";
+
+
 
 function CreateProduct() {
     const [nombre, setNombre] = useState("");
@@ -11,36 +14,43 @@ function CreateProduct() {
     const [descripcionError, setDescripcionError] = useState(false);
     const [urlError, setUrlError] = useState(false)
 
-    function handleSubmit(e) {
-        e.preventDefault();
+    async function handleSubmit(e) {
+        
 
-        if (!nombre) {
-            setNombreError(true);
-        }
+        try {
+            e.preventDefault();
 
-        if (!descripcion) {
-            setDescripcionError(true);
-        }
+            if (!nombre) {
+                setNombreError(true);
+                return
+            }
 
-        if (!url) {
-            setUrlError(true);
-        }
+            if (!descripcion) {
+                setDescripcionError(true);
+                return
+            }
 
-        if (!price) {
-            setPriceError(true);
-        }
+            if (!url) {
+                setUrlError(true);
+                return
+            }
 
-
-        if (nombre && descripcion && url && price) {
-            console.log("Formulario enviado");
-            setNombre("");
-            setDescripcion("");
-            setUrl("");
-            setPrice("");
-            setNombreError(false);
-            setDescripcionError(false);
-            setUrlError(false);
-            setPriceError(false);
+            if (!price) {
+                setPriceError(true);
+                return
+            }
+            
+            const token = localStorage.getItem("token");
+            
+            const headers = {
+                'content-type':'application/json',
+                'authorization':'Bearer ' + token
+            };
+            console.log(headers)
+            const {data} = await axios.post("http://localhost:4000/producto", { titulo:nombre, descripcion, img:url, price }, {headers});
+            console.log(data)
+        } catch (error) {
+            alert("error al cargar los archivos")
         }
     }
 
@@ -70,6 +80,7 @@ function CreateProduct() {
                     <Button type="submit" colorScheme="blue">
                         Añadir
                     </Button>
+                    
                 </VStack>
             </form>
         </Container>
