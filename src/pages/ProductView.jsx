@@ -3,6 +3,7 @@ import { BsCartPlus } from 'react-icons/bs';
 
 function ProductView(){
 
+
     return(<div>
 
     <Box maxW="lg" borderWidth="1px" borderRadius="lg" overflow="hidden">

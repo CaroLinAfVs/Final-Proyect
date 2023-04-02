@@ -30,7 +30,7 @@ function Products() {
           <ProductCard
             id={producto.id}
             img={producto.img}
-            nombre={producto.name}
+            titulo={producto.titulo}
             descripcion={producto.descripcion}
             price={producto.price}
           />

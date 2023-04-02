@@ -12,11 +12,11 @@ import { Link } from "react-router-dom";
 import { BsCartPlus, BsCartDash } from "react-icons/bs";
 import { useData } from "../Context/Context";
 
-function ProductCard({ id, img, nombre, descripcion, price }) {
+function ProductCard({ id, img, titulo, descripcion, price }) {
   const { shoppingCart, setShoppingCart } = useData();
   const productoExistente = shoppingCart.find((producto) => producto.id === id);
 
-  function actualizarCarrito(id, img, nombre, descripcion, price) {
+  function actualizarCarrito(id, img, titulo, descripcion, price) {
     if (productoExistente) {
       const newArray = shoppingCart.filter(
         (producto) => producto.id !== productoExistente.id
@@ -26,7 +26,7 @@ function ProductCard({ id, img, nombre, descripcion, price }) {
       return;
     }
 
-    const newProduct = { id, img, nombre, descripcion, price };
+    const newProduct = { id, img, titulo, descripcion, price };
     const newArray = [...shoppingCart, newProduct];
     setShoppingCart(newArray);
   }
@@ -35,13 +35,12 @@ function ProductCard({ id, img, nombre, descripcion, price }) {
     <Card>
       <CardHeader>
         <Heading size="md">
-          <Image src={img} alt={nombre} borderRadius="lg" />
+          <Image src={img} alt={titulo} borderRadius="lg" />
         </Heading>
       </CardHeader>
       <CardBody>
         <Text>
-          {nombre}
-          {descripcion}
+          {titulo}
           {price}
         </Text>
       </CardBody>
@@ -50,11 +49,11 @@ function ProductCard({ id, img, nombre, descripcion, price }) {
         justifyContent="space-around"
         alignItems="center"
       >
-        <Link to="/product-view">
-          <Button marginRight=" 10px">see more</Button>
+        <Link to={`/product-view/${id}`}>
+          <Button marginRight=" 10px">Ver más</Button>
         </Link>
         <Button
-          onClick={() => actualizarCarrito(id, img, nombre, descripcion, price)}
+          onClick={() => actualizarCarrito(id, img, titulo, descripcion, price)}
           colorScheme={productoExistente ? "red" : "teal"}
           marginRight=" 10px"
         >
