@@ -4,12 +4,14 @@ import { ArrowForwardIcon } from '@chakra-ui/icons';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useData } from '../Context/Context';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
+  const { setUser } = useData();
 
   async function handleSubmbit() {
     try {
@@ -23,9 +25,11 @@ function Login() {
           password,
         });
 
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('email', data.usuario.email);
-        localStorage.setItem('username', data.usuario.nombre);
+        setUser({
+          token: data.token,
+          email: data.usuario.email,
+          nombre: data.usuario.nombre,
+        });
 
         return navigate('/');
       }

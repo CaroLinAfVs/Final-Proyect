@@ -1,24 +1,24 @@
-import "./App.css";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Cart from "./pages/Cart";
-import Layout from "./componentes/Layout";
-import ProductView from "./pages/ProductView";
+import './App.css';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Cart from './pages/Cart';
+import Layout from './componentes/Layout';
+import ProductView from './pages/ProductView';
 
-import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Signup from "./pages/Signup";
-import Products from "./pages/Products";
-import CreateProduct from "./pages/CreateProduct";
-import { Context } from "./Context/Context";
-import { useState } from "react";
-import PrivateRoute from "./utils/PrivateRoute";
-import Myinformation from "./pages/MyInformation";
-import Favorites from "./pages/Favorites";
-import Myposts from "./pages/MyPosts";
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Signup from './pages/Signup';
+import Products from './pages/Products';
+import CreateProduct from './pages/CreateProduct';
+import { Context } from './Context/Context';
+import { useState } from 'react';
+import PrivateRoute from './utils/PrivateRoute';
+import Myinformation from './pages/MyInformation';
+import Favorites from './pages/Favorites';
+import Myposts from './pages/MyPosts';
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
   const [shoppingCart, setShoppingCart] = useState([]);
 
   return (

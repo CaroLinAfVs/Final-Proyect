@@ -17,16 +17,12 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useData } from '../Context/Context';
 
 function Navbar() {
-  const username = localStorage.getItem('username');
   const navigate = useNavigate();
 
-  const { shoppingCart } = useData();
+  const { shoppingCart, user, setUser } = useData();
 
   function logOut() {
-    localStorage.removeItem('email');
-    localStorage.removeItem('username');
-    localStorage.removeItem('token');
-
+    setUser({});
     return navigate('/');
   }
 
@@ -50,7 +46,7 @@ function Navbar() {
       </div>
 
       <div className="user">
-        {!username ? (
+        {!user.nombre ? (
           <div>
             <Link to="/login">
               <Button marginRight="5px" colorScheme="blue">
@@ -65,7 +61,7 @@ function Navbar() {
           <div>
             <Menu>
               <MenuButton as={Button} colorScheme="red">
-                Hola {username}
+                Hola {user.nombre}
               </MenuButton>
               <MenuList>
                 <MenuGroup title="Profile">
