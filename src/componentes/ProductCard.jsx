@@ -9,21 +9,40 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { BsCartPlus } from "react-icons/bs";
+import { BsCartPlus, BsCartDash } from "react-icons/bs";
+import { useData } from "../Context/Context";
 
-function ProductCard({ imagen, nombre, descripcion, precio }) {
+function ProductCard({ id, img, nombre, descripcion, price }) {
+  const { shoppingCart, setShoppingCart } = useData();
+  const productoExistente = shoppingCart.find((producto) => producto.id === id);
+
+  function actualizarCarrito(id, img, nombre, descripcion, price) {
+    if (productoExistente) {
+      const newArray = shoppingCart.filter(
+        (producto) => producto.id !== productoExistente.id
+      );
+
+      setShoppingCart(newArray);
+      return;
+    }
+
+    const newProduct = { id, img, nombre, descripcion, price };
+    const newArray = [...shoppingCart, newProduct];
+    setShoppingCart(newArray);
+  }
+
   return (
     <Card>
       <CardHeader>
         <Heading size="md">
-          <Image src={imagen} alt={nombre} borderRadius="lg" />
+          <Image src={img} alt={nombre} borderRadius="lg" />
         </Heading>
       </CardHeader>
       <CardBody>
         <Text>
           {nombre}
           {descripcion}
-          {precio}
+          {price}
         </Text>
       </CardBody>
       <CardFooter
@@ -34,8 +53,12 @@ function ProductCard({ imagen, nombre, descripcion, precio }) {
         <Link to="/product-view">
           <Button marginRight=" 10px">see more</Button>
         </Link>
-        <Button marginRight=" 10px">
-          <BsCartPlus />
+        <Button
+          onClick={() => actualizarCarrito(id, img, nombre, descripcion, price)}
+          colorScheme={productoExistente ? "red" : "teal"}
+          marginRight=" 10px"
+        >
+          {productoExistente ? <BsCartDash /> : <BsCartPlus />}
         </Button>
       </CardFooter>
     </Card>
