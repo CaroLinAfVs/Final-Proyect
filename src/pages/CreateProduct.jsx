@@ -46,9 +46,8 @@ function CreateProduct() {
                 'content-type':'application/json',
                 'authorization':'Bearer ' + token
             };
-            console.log(headers)
+            
             const {data} = await axios.post("http://localhost:4000/producto", { titulo:nombre, descripcion, img:url, price }, {headers});
-            console.log(data)
         } catch (error) {
             alert("error al cargar los archivos")
         }
