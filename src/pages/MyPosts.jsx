@@ -1,4 +1,4 @@
-import "../styles/menu.css";
+import '../styles/menu.css';
 import {
   SimpleGrid,
   Heading,
@@ -13,11 +13,11 @@ import {
   StatLabel,
   StatHelpText,
   useToast,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 function MyPosts() {
   const toast = useToast();
@@ -26,14 +26,14 @@ function MyPosts() {
   useEffect(() => {
     const obtenerMisProductos = async () => {
       try {
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem('token');
 
         const headers = {
-          "content-type": "application/json",
-          authorization: "Bearer " + token,
+          'content-type': 'application/json',
+          authorization: 'Bearer ' + token,
         };
 
-        const { data } = await axios.get("http://localhost:4000/producto", {
+        const { data } = await axios.get('http://localhost:4000/producto', {
           headers,
         });
         setMisProductos(data);
@@ -46,11 +46,11 @@ function MyPosts() {
 
   async function eliminarProducto(id) {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem('token');
 
       const headers = {
-        "content-type": "application/json",
-        authorization: "Bearer " + token,
+        'content-type': 'application/json',
+        authorization: 'Bearer ' + token,
       };
 
       const {
@@ -65,15 +65,15 @@ function MyPosts() {
 
       setMisProductos(nuevoMisProductos);
       toast({
-        title: "Producto eliminado",
-        status: "success",
+        title: 'Producto eliminado',
+        status: 'success',
         duration: 2000,
         isClosable: true,
       });
     } catch (error) {
       toast({
-        title: "Hubo un error al eliminar el producto. Intentelo de nuevo.",
-        status: "error",
+        title: 'Hubo un error al eliminar el producto. Intentelo de nuevo.',
+        status: 'error',
         duration: 3000,
         isClosable: true,
       });
@@ -82,7 +82,7 @@ function MyPosts() {
 
   return (
     <div className="myposts">
-      <div className="box" style={{ height: "100vh" }}>
+      <div className="box" style={{ height: '100vh' }}>
         <div className="contenidoPosts">
           <SimpleGrid
             spacing={4}

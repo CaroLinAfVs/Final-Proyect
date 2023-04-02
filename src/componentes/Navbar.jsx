@@ -1,4 +1,4 @@
-import "../styles/navbar.css";
+import '../styles/navbar.css';
 
 import {
   Menu,
@@ -10,24 +10,24 @@ import {
   Tag,
   Text,
   Box,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { FaShoppingCart } from "react-icons/fa";
-import { useNavigate, Link } from "react-router-dom";
-import { useData } from "../Context/Context";
+import { FaShoppingCart } from 'react-icons/fa';
+import { useNavigate, Link } from 'react-router-dom';
+import { useData } from '../Context/Context';
 
 function Navbar() {
-  const username = localStorage.getItem("username");
+  const username = localStorage.getItem('username');
   const navigate = useNavigate();
 
   const { shoppingCart } = useData();
 
   function logOut() {
-    localStorage.removeItem("email");
-    localStorage.removeItem("username");
-    localStorage.removeItem("token");
+    localStorage.removeItem('email');
+    localStorage.removeItem('username');
+    localStorage.removeItem('token');
 
-    return navigate("/");
+    return navigate('/');
   }
 
   return (
@@ -88,7 +88,7 @@ function Navbar() {
           </div>
         )}
         <Link to="/cart">
-          <Tag size={"lg"} variant="solid" colorScheme="teal">
+          <Tag size={'lg'} variant="solid" colorScheme="teal">
             <FaShoppingCart />
             <Box px={2}>
               <Text fontSize="lg">{shoppingCart.length}</Text>

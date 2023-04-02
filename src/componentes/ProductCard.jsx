@@ -7,10 +7,10 @@ import {
   Text,
   Button,
   Image,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { BsCartPlus, BsCartDash } from "react-icons/bs";
-import { useData } from "../Context/Context";
+} from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import { BsCartPlus, BsCartDash } from 'react-icons/bs';
+import { useData } from '../Context/Context';
 
 function ProductCard({ id, img, titulo, descripcion, price }) {
   const { shoppingCart, setShoppingCart } = useData();
@@ -54,7 +54,7 @@ function ProductCard({ id, img, titulo, descripcion, price }) {
         </Link>
         <Button
           onClick={() => actualizarCarrito(id, img, titulo, descripcion, price)}
-          colorScheme={productoExistente ? "red" : "teal"}
+          colorScheme={productoExistente ? 'red' : 'teal'}
           marginRight=" 10px"
         >
           {productoExistente ? <BsCartDash /> : <BsCartPlus />}

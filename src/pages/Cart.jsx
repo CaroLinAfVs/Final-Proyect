@@ -1,5 +1,5 @@
-import "../styles/cart.css";
-import { useData } from "../Context/Context";
+import '../styles/cart.css';
+import { useData } from '../Context/Context';
 
 import {
   SimpleGrid,
@@ -11,7 +11,7 @@ import {
   CardBody,
   CardFooter,
   Text,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 function Cart() {
   const { shoppingCart, setShoppingCart } = useData();
