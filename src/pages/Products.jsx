@@ -2,7 +2,7 @@ import "../styles/products.css";
 import { SimpleGrid } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../componentes/ProductCard";
 
 function Products() {
   const [productos, setProductos] = useState([]);
