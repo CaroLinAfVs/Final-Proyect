@@ -66,18 +66,18 @@ function Navbar() {
               <MenuList>
                 <MenuGroup title="Profile">
                   <Link to="/my-information">
-                    <MenuItem>My Account</MenuItem>
+                    <MenuItem>Mi cuenta</MenuItem>
                   </Link>
                   <Link to="/favorites">
-                    <MenuItem>Favorite</MenuItem>
+                    <MenuItem>Favoritos</MenuItem>
                   </Link>
-                  <Link to="/my-posts">
-                    <MenuItem>My posts</MenuItem>
+                  <Link to="/my-products">
+                    <MenuItem>Mis productos</MenuItem>
                   </Link>
                   <Link to="/create-product">
-                    <MenuItem>Create product</MenuItem>
+                    <MenuItem>Crear producto</MenuItem>
                   </Link>
-                  <MenuItem onClick={logOut}>Log out</MenuItem>
+                  <MenuItem onClick={logOut}>Cerrar sesión</MenuItem>
                 </MenuGroup>
               </MenuList>
             </Menu>

@@ -68,7 +68,7 @@ function App() {
                 }
               />
               <Route
-                path="/my-posts"
+                path="/my-products"
                 element={
                   <PrivateRoute>
                     <MyProducts />

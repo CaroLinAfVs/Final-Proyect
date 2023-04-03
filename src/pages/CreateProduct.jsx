@@ -8,6 +8,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import axios from 'axios';
+import { useData } from '../Context/Context';
 
 function CreateProduct() {
   const [nombre, setNombre] = useState('');
@@ -18,6 +19,8 @@ function CreateProduct() {
   const [priceError, setPriceError] = useState(false);
   const [descripcionError, setDescripcionError] = useState(false);
   const [urlError, setUrlError] = useState(false);
+
+  const { user } = useData();
 
   async function handleSubmit(e) {
     try {
@@ -43,14 +46,12 @@ function CreateProduct() {
         return;
       }
 
-      const token = localStorage.getItem('token');
-
       const headers = {
         'content-type': 'application/json',
-        authorization: 'Bearer ' + token,
+        authorization: 'Bearer ' + user.token,
       };
 
-      const { data } = await axios.post(
+      await axios.post(
         'http://localhost:4000/producto',
         { titulo: nombre, descripcion, img: url, price },
         { headers }

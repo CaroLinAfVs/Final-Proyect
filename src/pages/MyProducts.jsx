@@ -18,19 +18,19 @@ import {
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useData } from '../Context/Context';
 
 function MyProducts() {
   const toast = useToast();
+  const { user } = useData();
 
   const [misProductos, setMisProductos] = useState([]);
   useEffect(() => {
     const obtenerMisProductos = async () => {
       try {
-        const token = localStorage.getItem('token');
-
         const headers = {
           'content-type': 'application/json',
-          authorization: 'Bearer ' + token,
+          authorization: 'Bearer ' + user.token,
         };
 
         const { data } = await axios.get('http://localhost:4000/producto', {
@@ -46,11 +46,9 @@ function MyProducts() {
 
   async function eliminarProducto(id) {
     try {
-      const token = localStorage.getItem('token');
-
       const headers = {
         'content-type': 'application/json',
-        authorization: 'Bearer ' + token,
+        authorization: 'Bearer ' + user.token,
       };
 
       const {
