@@ -7,7 +7,7 @@
 }
 
 .logo img {
-    width: 30px;
+    width: 40px;
 }
 
 .user {
@@ -15,6 +15,9 @@
     justify-content: space-around;
     align-items: center;
     gap: 14px;
+}
+.category button{
+    margin-right: 10px;
 }
 @media screen and (max-width: 600px) {
     .container {

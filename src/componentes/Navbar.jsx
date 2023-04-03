@@ -1,52 +1,93 @@
-import '../styles/header.css';
+import '../styles/navbar.css';
 
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
+import {
+  Menu,
+  MenuList,
+  MenuButton,
+  MenuGroup,
+  MenuItem,
+  Button,
+  Tag,
+  Text,
+  Box,
+} from '@chakra-ui/react';
+
 import { FaShoppingCart } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-
+import { useNavigate, Link } from 'react-router-dom';
+import { useData } from '../Context/Context';
 
 function Navbar() {
-    return (
-        <div className='container'>
-            <div className="logo">
-                <img src="https://www.logocrea.com/storage/2016/07/gato1.png" alt="" />
-            </div>
+  const navigate = useNavigate();
 
-            <div className="category">
-                <Breadcrumb>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='/'>Home</BreadcrumbLink>
-                    </BreadcrumbItem>
+  const { shoppingCart, user, setUser } = useData();
 
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='products'>Products</BreadcrumbLink>
-                    </BreadcrumbItem>
+  function logOut() {
+    setUser({});
+    return navigate('/');
+  }
 
-                    <BreadcrumbItem >
-                        <BreadcrumbLink href='user'>User</BreadcrumbLink>
-                    </BreadcrumbItem>
+  return (
+    <div className="container">
+      <div className="logo">
+        <img
+          src="https://img.freepik.com/iconos-gratis/gato-negro_318-837948.jpg"
+          alt=""
+        />
+      </div>
 
-                    <BreadcrumbItem >
-                        <BreadcrumbLink href='galeria'>galeria</BreadcrumbLink>
-                    </BreadcrumbItem>
-                </Breadcrumb>
-            </div>
+      <div className="category">
+        <Link to="/">
+          <Button>Home</Button>
+        </Link>
 
-            <div className='user'>
-                <Breadcrumb>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='/login'>log in</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='/signup'>sign up</BreadcrumbLink>
-                    </BreadcrumbItem>
-                </Breadcrumb>
-                <Link to="/cart">
-                <FaShoppingCart/>
-                </Link>
-            </div>
+        <Link to="/products">
+          <Button>Products</Button>
+        </Link>
+      </div>
 
-        </div>
-    )
+      <div className="user">
+        {!user.nombre ? (
+          <div>
+            <Link to="/login">
+              <Button marginRight="5px" colorScheme="blue">
+                log in
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button colorScheme="blue">sign up</Button>
+            </Link>
+          </div>
+        ) : (
+          <div>
+            <Menu>
+              <MenuButton as={Button} colorScheme="red">
+                Hola {user.nombre}
+              </MenuButton>
+              <MenuList>
+                <MenuGroup title="Profile">
+                  <Link to="/my-products">
+                    <MenuItem>Mis productos</MenuItem>
+                  </Link>
+                  <Link to="/create-product">
+                    <MenuItem>Crear producto</MenuItem>
+                  </Link>
+                  <MenuItem onClick={logOut}>Cerrar sesión</MenuItem>
+                </MenuGroup>
+              </MenuList>
+            </Menu>
+          </div>
+        )}
+        <Link to="/cart">
+          <Tag size={'lg'} variant="solid" colorScheme="teal">
+            <FaShoppingCart />
+            <Box px={2}>
+              <Text fontSize="lg">{shoppingCart.length}</Text>
+            </Box>
+          </Tag>
+        </Link>
+      </div>
+    </div>
+  );
 }
-export default Navbar
+
+export default Navbar;
