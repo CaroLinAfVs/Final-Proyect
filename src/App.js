@@ -13,8 +13,6 @@ import CreateProduct from './pages/CreateProduct';
 import { Context } from './Context/Context';
 import { useEffect, useState } from 'react';
 import PrivateRoute from './utils/PrivateRoute';
-import Myinformation from './pages/MyInformation';
-import Favorites from './pages/Favorites';
 import MyProducts from './pages/MyProducts';
 
 function App() {
@@ -51,22 +49,7 @@ function App() {
                   </PrivateRoute>
                 }
               />
-              <Route
-                path="/my-information"
-                element={
-                  <PrivateRoute>
-                    <Myinformation />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/favorites"
-                element={
-                  <PrivateRoute>
-                    <Favorites />
-                  </PrivateRoute>
-                }
-              />
+
               <Route
                 path="/my-products"
                 element={

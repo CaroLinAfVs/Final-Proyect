@@ -2,14 +2,14 @@ import '../styles/footer.css';
 function Footer() {
   return (
     <footer>
-      <div class="contacto">
+      <div className="contacto">
         <h3>Contacto</h3>
         <p>Teléfono: 123-456-7890</p>
         <p>Correo electrónico: info@ejemplo.com</p>
         <p>Dirección: 123 Calle Principal, Ciudad, Estado, País</p>
       </div>
 
-      <div class="enlaces">
+      <div className="enlaces">
         <h3>Enlaces importantes</h3>
         <ul>
           <li>
@@ -27,7 +27,7 @@ function Footer() {
         </ul>
       </div>
 
-      <div class="derechos">
+      <div className="derechos">
         <p>&copy; 2023 Ejemplo, Inc. Todos los derechos reservados.</p>
       </div>
     </footer>

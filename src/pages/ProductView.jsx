@@ -14,12 +14,14 @@ import axios from 'axios';
 import { useData } from '../Context/Context';
 
 function ProductView() {
-  let { id } = useParams();
+  const { id } = useParams();
+
 
   const [producto, setProducto] = useState({});
   const { shoppingCart, setShoppingCart } = useData();
 
-  const productoExistente = shoppingCart.find((producto) => producto.id === id);
+  const productoExistente = shoppingCart.find((producto) => `${producto.id}` === id);
+
 
   useEffect(() => {
     if (id) {
@@ -54,10 +56,10 @@ function ProductView() {
 
   return (
     <div className="full-content">
-      <Wrap borderRadius="lg" overflow="hidden">
-        <WrapItem>
-          <Image src={producto.img} alt={producto.titulo} />
-        </WrapItem>
+      <Wrap borderRadius="lg" overflow="hidden" >
+          <WrapItem px={10} w={"60%"} margin="auto">
+            <Image src={producto.img} alt={producto.titulo} objectFit='cover' />
+          </WrapItem>
         <WrapItem>
           <Box p="6">
             <Box d="flex" alignItems="baseline">

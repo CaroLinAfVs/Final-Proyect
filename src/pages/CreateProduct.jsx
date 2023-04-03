@@ -7,6 +7,7 @@ import {
   Button,
   VStack,
   Text,
+  useToast,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useData } from '../Context/Context';
@@ -22,8 +23,9 @@ function CreateProduct() {
   const [urlError, setUrlError] = useState(false);
 
   const { user } = useData();
-
+  const toast = useToast();
   async function handleSubmit(e) {
+
     try {
       e.preventDefault();
 
@@ -57,8 +59,19 @@ function CreateProduct() {
         { titulo: nombre, descripcion, img: url, price },
         { headers }
       );
+      toast({
+        title: 'Producto agregado',
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      });
     } catch (error) {
-      alert('error al cargar los archivos');
+      toast({
+        title: 'Hubo un error al publicar el producto. Intentelo de nuevo.',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
     }
   }
 

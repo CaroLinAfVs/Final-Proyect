@@ -65,12 +65,6 @@ function Navbar() {
               </MenuButton>
               <MenuList>
                 <MenuGroup title="Profile">
-                  <Link to="/my-information">
-                    <MenuItem>Mi cuenta</MenuItem>
-                  </Link>
-                  <Link to="/favorites">
-                    <MenuItem>Favoritos</MenuItem>
-                  </Link>
                   <Link to="/my-products">
                     <MenuItem>Mis productos</MenuItem>
                   </Link>

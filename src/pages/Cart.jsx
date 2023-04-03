@@ -11,14 +11,24 @@ import {
   CardBody,
   CardFooter,
   Text,
+  useToast,
 } from '@chakra-ui/react';
 
+
+
 function Cart() {
+  const toast = useToast();
   const { shoppingCart, setShoppingCart } = useData();
 
   function eliminarProducto(id) {
     const newArray = shoppingCart.filter((producto) => producto.id !== id);
     setShoppingCart(newArray);
+    toast({
+      title: 'Producto eliminado',
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    });
   }
 
   return (
