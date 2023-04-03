@@ -109,7 +109,7 @@ function MyProducts() {
                 <CardFooter className="cardFooter">
                   <Text>{producto.price}</Text>
                   <div className="botones">
-                    <Link to="/product-view">
+                    <Link to={`/product-view/${producto.id}`}>
                       <Button marginRight=" 10px">Ver más</Button>
                     </Link>
                     <Button
