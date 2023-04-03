@@ -48,7 +48,7 @@ function CardSample() {
 
 function Home() {
   return (
-    <div className="home">
+    <div className="full-content">
       <div className="exampleProducts">
         <Box className="imageView">
           <img

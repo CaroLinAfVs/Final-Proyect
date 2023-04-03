@@ -21,12 +21,13 @@ function Products() {
   }, []);
 
   return (
-    <div className="products">
+    <div className="full-content">
       <Text fontSize="4xl" align="center">
         Catálogo de productos
       </Text>
       <SimpleGrid
         spacing={4}
+        py={8}
         templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
       >
         {productos.map((producto) => (

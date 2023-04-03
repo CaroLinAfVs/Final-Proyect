@@ -13,6 +13,7 @@ import {
   StatLabel,
   StatHelpText,
   useToast,
+  Center,
 } from '@chakra-ui/react';
 
 import { Link } from 'react-router-dom';
@@ -79,53 +80,55 @@ function MyProducts() {
   }
 
   return (
-    <div className="my-products">
-      <div className="box" style={{ height: '100vh' }}>
-        <div className="contenidoPosts">
-          <Text fontSize="4xl" align="center">
-            Mis productos
-          </Text>
-          <SimpleGrid
-            spacing={4}
-            templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-          >
-            {misProductos.map((producto) => (
-              <Card>
-                <CardHeader>
-                  <Heading size="md">
-                    <Image
-                      src={producto.img}
-                      alt={producto.titulo}
-                      borderRadius="lg"
-                    />
-                  </Heading>
-                </CardHeader>
-                <CardBody>
-                  <Stat>
-                    <StatLabel>{producto.titulo}</StatLabel>
-                    <StatHelpText>{producto.descripcion}</StatHelpText>
-                  </Stat>
-                </CardBody>
-                <CardFooter className="cardFooter">
-                  <Text>{producto.price}</Text>
-                  <div className="botones">
-                    <Link to={`/product-view/${producto.id}`}>
-                      <Button marginRight=" 10px">Ver más</Button>
-                    </Link>
-                    <Button
-                      onClick={() => eliminarProducto(producto.id)}
-                      marginRight=" 10px"
-                      colorScheme="red"
-                    >
-                      Eliminar
-                    </Button>
-                  </div>
-                </CardFooter>
-              </Card>
-            ))}
-          </SimpleGrid>
+    <div className="full-content">
+      <Center py={10}>
+        <div className="full-content box">
+          <div className="contenidoPosts">
+            <Text fontSize="4xl" align="center">
+              Mis productos
+            </Text>
+            <SimpleGrid
+              spacing={4}
+              templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            >
+              {misProductos.map((producto) => (
+                <Card>
+                  <CardHeader>
+                    <Heading size="md">
+                      <Image
+                        src={producto.img}
+                        alt={producto.titulo}
+                        borderRadius="lg"
+                      />
+                    </Heading>
+                  </CardHeader>
+                  <CardBody>
+                    <Stat>
+                      <StatLabel>{producto.titulo}</StatLabel>
+                      <StatHelpText>{producto.descripcion}</StatHelpText>
+                    </Stat>
+                  </CardBody>
+                  <CardFooter className="cardFooter">
+                    <Text>{producto.price}</Text>
+                    <div className="botones">
+                      <Link to={`/product-view/${producto.id}`}>
+                        <Button marginRight=" 10px">Ver más</Button>
+                      </Link>
+                      <Button
+                        onClick={() => eliminarProducto(producto.id)}
+                        marginRight=" 10px"
+                        colorScheme="red"
+                      >
+                        Eliminar
+                      </Button>
+                    </div>
+                  </CardFooter>
+                </Card>
+              ))}
+            </SimpleGrid>
+          </div>
         </div>
-      </div>
+      </Center>
     </div>
   );
 }

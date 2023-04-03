@@ -5,16 +5,9 @@
     align-items: center;
     margin-bottom: 30px;
 }
-.my-products {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-}
+
 .box{
-    width: 79%;
-    height: 100%;
+    width: 80%;
     padding: 10px;
     border: 1px solid rgba(109, 107, 107, 0.35);
     border-radius: 4px;

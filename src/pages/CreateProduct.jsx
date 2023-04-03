@@ -63,7 +63,7 @@ function CreateProduct() {
   }
 
   return (
-    <Container>
+    <Container className="full-content" py={10}>
       <Text fontSize="4xl" align="center">
         Crear producto
       </Text>
