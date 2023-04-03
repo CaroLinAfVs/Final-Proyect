@@ -15,7 +15,7 @@ import { useEffect, useState } from 'react';
 import PrivateRoute from './utils/PrivateRoute';
 import Myinformation from './pages/MyInformation';
 import Favorites from './pages/Favorites';
-import Myposts from './pages/MyPosts';
+import MyProducts from './pages/MyProducts';
 
 function App() {
   const userItem = localStorage.getItem('user');
@@ -71,7 +71,7 @@ function App() {
                 path="/my-posts"
                 element={
                   <PrivateRoute>
-                    <Myposts />
+                    <MyProducts />
                   </PrivateRoute>
                 }
               />

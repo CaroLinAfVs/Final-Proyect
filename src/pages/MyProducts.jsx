@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-function MyPosts() {
+function MyProducts() {
   const toast = useToast();
 
   const [misProductos, setMisProductos] = useState([]);
@@ -81,7 +81,7 @@ function MyPosts() {
   }
 
   return (
-    <div className="myposts">
+    <div className="my-products">
       <div className="box" style={{ height: '100vh' }}>
         <div className="contenidoPosts">
           <SimpleGrid
@@ -128,4 +128,4 @@ function MyPosts() {
     </div>
   );
 }
-export default MyPosts;
+export default MyProducts;
