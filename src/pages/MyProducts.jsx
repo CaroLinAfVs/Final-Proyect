@@ -82,6 +82,9 @@ function MyProducts() {
     <div className="my-products">
       <div className="box" style={{ height: '100vh' }}>
         <div className="contenidoPosts">
+          <Text fontSize="4xl" align="center">
+            Mis productos
+          </Text>
           <SimpleGrid
             spacing={4}
             templateColumns="repeat(auto-fill, minmax(200px, 1fr))"

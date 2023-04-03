@@ -6,6 +6,7 @@ import {
   Container,
   Button,
   VStack,
+  Text,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useData } from '../Context/Context';
@@ -63,6 +64,9 @@ function CreateProduct() {
 
   return (
     <Container>
+      <Text fontSize="4xl" align="center">
+        Crear producto
+      </Text>
       <form onSubmit={handleSubmit}>
         <VStack spacing={4}>
           <FormControl isRequired isInvalid={nombreError}>

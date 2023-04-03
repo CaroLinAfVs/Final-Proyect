@@ -1,5 +1,5 @@
 import '../styles/products.css';
-import { SimpleGrid } from '@chakra-ui/react';
+import { SimpleGrid, Text } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../componentes/ProductCard';
@@ -22,6 +22,9 @@ function Products() {
 
   return (
     <div className="products">
+      <Text fontSize="4xl" align="center">
+        Catálogo de productos
+      </Text>
       <SimpleGrid
         spacing={4}
         templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
