@@ -11,15 +11,25 @@ import Signup from './pages/Signup';
 import Products from './pages/Products';
 import CreateProduct from './pages/CreateProduct';
 import { Context } from './Context/Context';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PrivateRoute from './utils/PrivateRoute';
 import Myinformation from './pages/MyInformation';
 import Favorites from './pages/Favorites';
 import Myposts from './pages/MyPosts';
 
 function App() {
-  const [user, setUser] = useState({});
-  const [shoppingCart, setShoppingCart] = useState([]);
+  const userItem = localStorage.getItem('user');
+  const cartItem = localStorage.getItem('shoppingCart');
+
+  const [user, setUser] = useState(userItem ? JSON.parse(userItem) : {});
+  const [shoppingCart, setShoppingCart] = useState(
+    cartItem ? JSON.parse(cartItem) : []
+  );
+
+  useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+  }, [user, shoppingCart]);
 
   return (
     <ChakraProvider>
