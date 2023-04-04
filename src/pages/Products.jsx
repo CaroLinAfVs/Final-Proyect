@@ -10,7 +10,7 @@ function Products() {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const { data } = await axios.get(`${baseUrl}/product'`);
+        const { data } = await axios.get(`${baseUrl}/producto`);
         setProductos(data);
       } catch (error) {
         alert(
