@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useData } from '../Context/Context';
-import {baseUrl} from '../utils/config'
+import { baseUrl } from '../utils/config';
 
 function CreateProduct() {
   const [nombre, setNombre] = useState('');
@@ -26,7 +26,6 @@ function CreateProduct() {
   const { user } = useData();
   const toast = useToast();
   async function handleSubmit(e) {
-
     try {
       e.preventDefault();
 
@@ -60,6 +59,12 @@ function CreateProduct() {
         { titulo: nombre, descripcion, img: url, price },
         { headers }
       );
+
+      setNombre('');
+      setPrice('');
+      setDescripcion('');
+      setUrl('');
+
       toast({
         title: 'Producto agregado',
         status: 'success',

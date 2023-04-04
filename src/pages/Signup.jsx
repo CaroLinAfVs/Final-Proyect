@@ -2,15 +2,16 @@ import '../styles/signup.css';
 import { Input, Button } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import {baseUrl} from '../utils/config'
+import { baseUrl } from '../utils/config';
 
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [passwordStrength, setPasswordStrength] = useState('');
+  const navigate = useNavigate();
 
   async function handleSubmbit() {
     try {
@@ -26,6 +27,8 @@ function Signup() {
           password,
           name,
         });
+
+        navigate('/login');
       }
     } catch (error) {
       alert('Hubo un error con el registro de usuarios. Intentarlo mas tarde.');
