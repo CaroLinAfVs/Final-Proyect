@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useData } from '../Context/Context';
+import {baseUrl} from '../utils/config'
 
 function CreateProduct() {
   const [nombre, setNombre] = useState('');
@@ -55,7 +56,7 @@ function CreateProduct() {
       };
 
       await axios.post(
-        'http://localhost:4000/producto',
+        `${baseUrl}/producto`,
         { titulo: nombre, descripcion, img: url, price },
         { headers }
       );

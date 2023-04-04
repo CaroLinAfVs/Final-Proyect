@@ -4,6 +4,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import {baseUrl} from '../utils/config'
 
 function Signup() {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ function Signup() {
       } else if (name === '') {
         alert('porfavor ingresa un nombre');
       } else {
-        await axios.post('http://localhost:4000/signup', {
+        await axios.post(`${baseUrl}/signup`, {
           email,
           password,
           name,

@@ -3,13 +3,14 @@ import { SimpleGrid, Text } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../componentes/ProductCard';
+import {baseUrl} from '../utils/config'
 
 function Products() {
   const [productos, setProductos] = useState([]);
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const { data } = await axios.get('http://localhost:4000/producto');
+        const { data } = await axios.get(`${baseUrl}/product'`);
         setProductos(data);
       } catch (error) {
         alert(

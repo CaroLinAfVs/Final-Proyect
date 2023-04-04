@@ -12,6 +12,7 @@ import { BsCartPlus, BsCartDash } from 'react-icons/bs';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useData } from '../Context/Context';
+import {baseUrl} from '../utils/config'
 
 function ProductView() {
   const { id } = useParams();
@@ -27,7 +28,7 @@ function ProductView() {
     if (id) {
       async function traerProducto() {
         const { data } = await axios.get(
-          `http://localhost:4000/producto/${id}`
+          `${baseUrl}/producto/${id}`
         );
         setProducto(data);
       }
