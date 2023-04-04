@@ -12,6 +12,7 @@ import {
   CardFooter,
   Text,
   useToast,
+  Center,
 } from '@chakra-ui/react';
 
 
@@ -32,42 +33,44 @@ function Cart() {
   }
 
   return (
-    <div className="cart">
-      <div className="box">
-        <div className="contenido">
-          <SimpleGrid
-            spacing={4}
-            templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-          >
-            {shoppingCart.map((product) => (
-              <Card>
-                <CardHeader>
-                  <Heading size="md">
-                    <Image
-                      src={product.img}
-                      alt={product.nombre}
-                      borderRadius="lg"
-                    />
-                  </Heading>
-                </CardHeader>
-                <CardBody>
-                  <Text>{product.descripcion}</Text>
-                </CardBody>
-                <CardFooter className="cardFooter">
-                  <Text>$ {product.price}</Text>
-                  <Button
-                    onClick={() => eliminarProducto(product.id)}
-                    colorScheme="red"
-                  >
-                    Eliminar
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </SimpleGrid>
+    <div className="full-content">
+      <Center >
+      <div className="full-content box">
+          <div className="contenidoPosts">
+            <SimpleGrid
+              spacing={4}
+              templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            >
+              {shoppingCart.map((product) => (
+                <Card>
+                  <CardHeader>
+                    <Heading size="md">
+                      <Image
+                        src={product.img}
+                        alt={product.nombre}
+                        borderRadius="lg"
+                      />
+                    </Heading>
+                  </CardHeader>
+                  <CardBody>
+                    <Text>{product.descripcion}</Text>
+                  </CardBody>
+                  <CardFooter className="cardFooter">
+                    <Text>$ {product.price}</Text>
+                    <Button
+                      onClick={() => eliminarProducto(product.id)}
+                      colorScheme="red"
+                    >
+                      Eliminar
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </SimpleGrid>
+          </div>
         </div>
-      </div>
-    </div>
+      </Center>
+    </div >
   );
 }
 

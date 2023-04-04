@@ -1,5 +1,5 @@
 import '../styles/signup.css';
-import { Input, Button } from '@chakra-ui/react';
+import { Input, Button, useToast } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ import axios from 'axios';
 import {baseUrl} from '../utils/config'
 
 function Signup() {
+  const toast = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -26,9 +27,20 @@ function Signup() {
           password,
           name,
         });
+        toast({
+          title: 'Usuario creado con éxito',
+          status: 'success',
+          duration: 2000,
+          isClosable: true,
+        });
       }
     } catch (error) {
-      alert('Hubo un error con el registro de usuarios. Intentarlo mas tarde.');
+      toast({
+        title: 'Hubo un error con el registro de usuarios. Intente lo de nuevo.',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
     }
   }
 
