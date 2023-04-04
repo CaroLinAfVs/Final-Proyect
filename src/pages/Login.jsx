@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useData } from '../Context/Context';
+import {baseUrl} from '../utils/config'
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ function Login() {
       } else if (password.length < 5) {
         alert('La contraseña debe tener al menos 5 caracteres.');
       } else {
-        const { data } = await axios.post('http://localhost:4000/login', {
+        const { data } = await axios.post(`${baseUrl}/login`, {
           email,
           password,
         });

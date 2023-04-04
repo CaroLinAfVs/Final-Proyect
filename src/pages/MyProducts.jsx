@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useData } from '../Context/Context';
+import {baseUrl} from '../utils/config'
 
 function MyProducts() {
   const toast = useToast();
@@ -34,7 +35,7 @@ function MyProducts() {
           authorization: 'Bearer ' + user.token,
         };
 
-        const { data } = await axios.get('http://localhost:4000/producto', {
+        const { data } = await axios.get(`${baseUrl}/producto`, {
           headers,
         });
         setMisProductos(data);
@@ -54,7 +55,7 @@ function MyProducts() {
 
       const {
         data: { producto },
-      } = await axios.delete(`http://localhost:4000/producto/${id}`, {
+      } = await axios.delete(`${baseUrl}/producto/${id}`, {
         headers,
       });
 
