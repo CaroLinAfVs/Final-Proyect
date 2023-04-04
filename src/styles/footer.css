@@ -3,6 +3,6 @@ footer {
     background-color: #f7f7f7;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     padding: 10px 0;
   }
