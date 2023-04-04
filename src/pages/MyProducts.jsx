@@ -44,7 +44,7 @@ function MyProducts() {
       }
     };
     obtenerMisProductos();
-  }, []);
+  }, [user.token]);
 
   async function eliminarProducto(id) {
     try {
